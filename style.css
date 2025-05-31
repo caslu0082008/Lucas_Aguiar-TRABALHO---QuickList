@@ -19,4 +19,27 @@
   --always-white: #FFF;
   --border-primary: #D1D5DB;
   --border-hover: #B9C2D0;
+} 
+
+
+body {
+    font-size: 1.6rem;
+    padding: 3.2rem;
+    background: var(--background-primary);
+}
+
+header {
+    margin-bottom: 4.4rem;
+    max-width: 62.7rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+
+
+img {
+     width: 15.4rem;
+     margin-inline: auto;
+     margin-bottom: 3rem;
+    }
+
 }
