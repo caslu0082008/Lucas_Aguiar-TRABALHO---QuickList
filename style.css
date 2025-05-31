@@ -7,6 +7,7 @@
 
 :root {
   font-size: 62.5%;
+
   --background-primary: #f4f5fb;
   --background-secondary: #fff;
   --color-brand: #ca3884;
@@ -66,6 +67,7 @@ main {
   margin-bottom: 4rem;
 }
 
+/* Input de adicionar item */
 .add-item input {
   width: 100%;
   padding: 1.2rem;
@@ -87,6 +89,7 @@ main {
   outline: none;
 }
 
+/* Estilo do botão "Adicionar item" */
 .add-item button {
   background: var(--color-brand);
   border: none;
@@ -105,12 +108,14 @@ main {
   background: var(--color-brand-hover);
 }
 
+/* Lista de itens */
 .list {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
+/* Cada item da lista */
 .item {
   background: var(--background-secondary);
   padding: 1.2rem;
@@ -124,16 +129,19 @@ main {
   box-shadow: 0px 2px 6px rgba(8, 11, 18, 0.2);
 }
 
+/* Checkbox e texto do item */
 .item > div {
   display: flex;
   gap: 1.2rem;
   align-items: center;
 }
 
+/* Oculta checkbox padrão */
 .item input[type="checkbox"] {
   display: none;
 }
 
+/* Checkbox customizado */
 .custom-checkbox {
   width: 1.6rem;
   height: 1.6rem;
@@ -144,22 +152,36 @@ main {
   justify-content: center;
 }
 
-/* Se o input estiver marcado, colore o quadradinho */
-.item input[type="checkbox"]:checked + .custom-checkbox {
-  background: var(--color-brand);
-  transition: background 0.3s ease;
-}
-
+/* Botão de deletar item */
 .item button {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.6rem;
+  cursor: pointer;
+
 }
 
+
 label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
+    cursor:pointer;
+
 }
+ .item:has(input:checked) .custom-checkbox {
+  background: var(--color-brand);
+  transition: background 0.3s ease;
+}
+
+button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+    img {
+        width: 1.6rem;
+        opacity: 0.7;
+    }
+
