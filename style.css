@@ -114,3 +114,27 @@ input:focus {
   border: none;
   cursor: pointer;
 }
+
+
+.list {
+
+    background: var(--background-secondary);
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+    border-radius: 1.2rem;
+    box-shadow: 0.2px 6px rgba(8, 11, 18, 0.2);
+}
+
+    div {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+    }
+
+    
