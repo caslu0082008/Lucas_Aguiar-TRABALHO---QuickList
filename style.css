@@ -27,7 +27,6 @@ body {
   background: var(--background-primary);
 }
 
-/* Centraliza tudo no header */
 header {
   margin-bottom: 4.4rem;
   margin-inline: auto;
@@ -49,7 +48,7 @@ header button {
   line-height: 1.6rem;
   font-weight: 500;
   margin-bottom: 1.6rem;
-  color: var(--color-brand);
+  color: var(--content-secondary);
   cursor: pointer;
 }
 
@@ -59,37 +58,59 @@ h1 {
   line-height: 3.2rem;
 }
 
- main {
+main {
+  max-width: 62.7rem;
+  margin-inline: auto;
+}
 
-    max-width: 62.7rem;
-    margin-inline: auto;
- }
+.add-item {
+  margin-bottom: 4rem;
+}
 
- .add-item {
-    margin-bottom: 4rem;
- }
+/* Input de adicionar item */
+input {
+  width: 100%;
+  padding: 1.2rem;
+  border: 2px solid var(--border-primary);
+  margin-bottom: 1.6rem;
+  color: var(--content-primary);
+}
 
- input {
-    width: 100%;
-    padding: 1.2rem;
-    border: 2px solid var(--border-primary);
-    margin-bottom: 1.6rem;
-    color:var(--content-primary);
+input::placeholder {
+  color: var(--content-tertiary);
+}
 
-    &::placeholder {
-         color: var(--content-tertiary);
-    }
+input:hover {
+  border: 2px solid var(--color-brand-hover);
+}
 
-    &:hover {
-        border: 2px solid var(--color-brand-hover);
-    }
+input:focus {
+  border: 2px solid var(--color-brand);
+  outline: none;
+}
 
-    &:focus {
-        border: 2px solid var(--color-brand);
-        
-    }
+/* Estilo do botão "Adicionar item" */
+.add-item button {
+  background: var(--color-brand);
+  border: none;
+  color: var(--always-white);
+  width: 100%;
+  padding: 1rem 2.4rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  border-radius: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
+.add-item button:hover {
+  background: var(--color-brand-hover);
+}
 
-
- }
-
+/* Botões genéricos (como o de deletar item) */
+.item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
