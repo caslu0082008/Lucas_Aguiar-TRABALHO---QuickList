@@ -7,7 +7,6 @@
 
 :root {
   font-size: 62.5%;
-
   --background-primary: #f4f5fb;
   --background-secondary: #fff;
   --color-brand: #ca3884;
@@ -67,8 +66,7 @@ main {
   margin-bottom: 4rem;
 }
 
-/* Input de adicionar item */
-input {
+.add-item input {
   width: 100%;
   padding: 1.2rem;
   border: 2px solid var(--border-primary);
@@ -76,20 +74,19 @@ input {
   color: var(--content-primary);
 }
 
-input::placeholder {
+.add-item input::placeholder {
   color: var(--content-tertiary);
 }
 
-input:hover {
-  border: 2px solid var(--color-brand-hover);
+.add-item input:hover {
+  border-color: var(--color-brand-hover);
 }
 
-input:focus {
-  border: 2px solid var(--color-brand);
+.add-item input:focus {
+  border-color: var(--color-brand);
   outline: none;
 }
 
-/* Estilo do botão "Adicionar item" */
 .add-item button {
   background: var(--color-brand);
   border: none;
@@ -108,33 +105,61 @@ input:focus {
   background: var(--color-brand-hover);
 }
 
-/* Botões genéricos (como o de deletar item) */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.item {
+  background: var(--background-secondary);
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  border-radius: 1.2rem;
+  box-shadow: 0px 2px 6px rgba(8, 11, 18, 0.2);
+}
+
+.item > div {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.item input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Se o input estiver marcado, colore o quadradinho */
+.item input[type="checkbox"]:checked + .custom-checkbox {
+  background: var(--color-brand);
+  transition: background 0.3s ease;
+}
+
 .item button {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0.6rem;
 }
 
-
-.list {
-
-    background: var(--background-secondary);
-    padding: 1.2rem;
-    margin-bottom: 1.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    font-weight: 500;
-    border-radius: 1.2rem;
-    box-shadow: 0.2px 6px rgba(8, 11, 18, 0.2);
+label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
-
-    div {
-        display: flex;
-        gap: 1.2rem;
-        align-items: center;
-    }
-
-    
