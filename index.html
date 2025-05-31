@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Ícones Phosphor -->
   <link
     rel="stylesheet"
     type="text/css"
@@ -13,21 +15,27 @@
     type="text/css"
     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
   />
-  <script src="./style.css"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <!-- Fonte Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Estilo principal -->
+  <link rel="stylesheet" href="style.css" />
+
   <title>Quicklist</title>
 </head>
 <body>
   <header>
     <img src="./assets/logo.png" alt="logo Quicklist" />
-
     <button>
       <i class="ph ph-arrow-left"></i>
       Voltar
     </button>
-
     <h1>Compras da semana</h1>
   </header>
 
@@ -38,7 +46,6 @@
     </section>
 
     <section class="list">
-      
       <div class="item">
         <div>
           <input type="checkbox" name="list" id="item-1" />
@@ -52,7 +59,6 @@
         </button>
       </div>
 
-    
       <div class="item">
         <div>
           <input type="checkbox" name="list" id="item-2" />
@@ -66,7 +72,6 @@
         </button>
       </div>
 
-      
       <div class="item">
         <div>
           <input type="checkbox" name="list" id="item-3" />
@@ -82,13 +87,13 @@
     </section>
 
     <div class="Warning">
-        <div>
-             <i class="ph ph-warning-circle ph-fill"></i>
-             <span>0 item foi removido da lista</span>
-        </div>
-        <button>
-            <i class="ph ph-x"></i>
-        </button>
+      <div>
+        <i class="ph ph-warning-circle ph-fill"></i>
+        <span>0 item foi removido da lista</span>
+      </div>
+      <button>
+        <i class="ph ph-x"></i>
+      </button>
     </div>
   </main>
 </body>
