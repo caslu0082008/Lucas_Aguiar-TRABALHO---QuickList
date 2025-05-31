@@ -1,54 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=10">
-     <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-    />
-    <title>Quicklist</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+  />
+  <title>Quicklist</title>
 </head>
 <body>
-    <header>
-        <img src="./assets/logo.png" alt="logo Quicklist">
-           
+  <header>
+    <img src="./assets/logo.png" alt="logo Quicklist" />
+
+    <button>
+      <i class="ph ph-arrow-left"></i>
+      Voltar
+    </button>
+
+    <h1>Compras da semana</h1>
+  </header>
+
+  <main>
+    <section class="add-item">
+      <input type="text" placeholder="Adicione um novo item" id="item" />
+      <button>Adicionar item</button>
+    </section>
+
+    <section class="list">
+      
+      <div class="item">
+        <div>
+          <input type="checkbox" name="list" id="item-1" />
+          <div class="custom-checkbox">
+            <img src="./assets/checked.svg" alt="checked" />
+          </div>
+          <label for="item-1">Maçã</label>
+        </div>
         <button>
-          <i class="ph ph-arrow-left"></i>
-          Voltar
+          <img src="./assets/trash-icon.svg" alt="trash-icon" />
         </button>
+      </div>
 
-        <h1>Compras da semana</h1>
-    </header>
-     
-    <main>
-        <section class="add-item">
-            <input type="text" placeholder="Adicione um novo item" id="item">
-            <button>Adicionar item</button>
-        </section>
+    
+      <div class="item">
+        <div>
+          <input type="checkbox" name="list" id="item-2" />
+          <div class="custom-checkbox">
+            <img src="./assets/checked.svg" alt="checked" />
+          </div>
+          <label for="item-2">Kiwi</label>
+        </div>
+        <button>
+          <img src="./assets/trash-icon.svg" alt="trash-icon" />
+        </button>
+      </div>
 
-        <section class="list">
-            <div class="item">
-                <div>
-                    <input type="checkbox" name="list" id="item-1">
+      
+      <div class="item">
+        <div>
+          <input type="checkbox" name="list" id="item-3" />
+          <div class="custom-checkbox">
+            <img src="./assets/checked.svg" alt="checked" />
+          </div>
+          <label for="item-3">Laranja</label>
+        </div>
+        <button>
+          <img src="./assets/trash-icon.svg" alt="trash-icon" />
+        </button>
+      </div>
+    </section>
 
-                    <div class="custom-checkbox">
-                        <img src="./assets/checked.svg" alt="checked">
-                </div>
-
-                <label for="item-1">Maçã</label>
-            </div>
-
-            <button>
-                <img src="./assets/trash-icon.svg" alt="trash-icon">
-            </button>
-        </section>
-    </main>
+    <div class="Warning">
+        <div>
+             <i class="ph ph-warning-circle ph-fill"></i>
+             <span>0 item foi removido da lista</span>
+        </div>
+        <button>
+            <i class="ph ph-x"></i>
+        </button>
+    </div>
+  </main>
 </body>
 </html>
