@@ -200,3 +200,8 @@ button {
         transition: opacity .4s ease, transform .4s ease;
     }
 
+    .hide-warning {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
