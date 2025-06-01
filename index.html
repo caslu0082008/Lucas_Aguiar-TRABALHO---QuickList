@@ -6,69 +6,35 @@
   <title>Lista de Tarefas</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
-  <script src="./main.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
 
   <header>
     <img src="./assets/logo.png" alt="Logo"/>
     <button>← Voltar</button>
-    <h1>Minha Lista de Tarefas</h1>
+    <h1>Compras da semana</h1>
   </header>
 
   <main>
     <section class="add-item">
-      <input type="text" placeholder="Adicione uma nova tarefa" id="new-task"/>
-      <button>Adicionar</button>
+      <input type="text" placeholder="Adicione uma nova tarefa" id="item"/> <!-- corrigido -->
+      <button onclick="addItem()">Adicionar</button> <!-- evento adicionado -->
     </section>
 
     <section class="list">
-      <div class="item">
-        <div>
-          <input type="checkbox" id="task-1" checked/>
-          <span class="custom-checkbox"></span>
-          <label for="task-1">Maçã</label>
-        </div>
-        <button>
-          <img src="./assets/trash-icon.svg" alt="Deletar"/>
-        </button>
-      </div>
-
-      <div class="item">
-        <div>
-          <input type="checkbox" id="task-2"/>
-          <span class="custom-checkbox"></span>
-          <label for="task-2">Kiwi</label>
-        </div>
-        <button>
-          <img src="./assets/trash-icon.svg" alt="Deletar"/>
-        </button>
-      </div>
-
-    
-      <div class="item">
-        <div>
-          <input type="checkbox" id="task-3"/>
-          <span class="custom-checkbox"></span>
-          <label for="task-3">laranja</label>
-        </div>
-        <button>
-          <img src="./assets/trash-icon.svg" alt="Deletar"/>
-        </button>
-      </div>
+      <!-- Itens serão adicionados dinamicamente aqui -->
     </section>
 
-    <div class="warning">
+    <div class="warning hide-warning"> <!-- começa escondido -->
       <div>
         <i class="fa-solid fa-triangle-exclamation"></i>
         <span>O item foi removido da lista!</span>
       </div>
-      <button>Fechar</button>
+      <button onclick="addHideWarningClass()">Fechar</button> <!-- evento para esconder aviso -->
     </div>
   </main>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-
-</body>
+ </body>
 </html>
