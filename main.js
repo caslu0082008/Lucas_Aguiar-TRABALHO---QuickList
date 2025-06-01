@@ -90,4 +90,3 @@ function verifyLocalStorageItems() {
         items = JSON.parse(localStorageItems)
         showItemsList()
     }
-} 
