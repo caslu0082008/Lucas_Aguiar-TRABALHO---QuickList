@@ -1,207 +1,238 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
-:root {
-  font-size: 62.5%;
-
-  --background-primary: #f4f5fb;
-  --background-secondary: #fff;
-  --color-brand: #ca3884;
-  --color-brand-hover: #a52c6b;
-  --color-danger: #c93847;
-  --content-primary: #080b12;
+:root{
+    font-size: 62.5%;
+    --background-primary: #F4F5FB;
+  --background-secondary: #FFF;
+  --color-brand: #CA3884;
+  --color-brand-hover: #A52C6B;
+  --color-danger: #C93847;
+  --content-primary: #080B12;
   --content-secondary: #374151;
-  --content-tertiary: #9ca3af;
-  --always-white: #fff;
-  --border-primary: #d1d5db;
-  --border-hover: #b9c2d0;
+  --content-tertiary: #9CA3AF;
+  --always-white: #FFF;
+  --border-primary: #D1D5DB;
+  --border-hover: #B9C2D0;
 }
 
-body {
-  font-size: 1.6rem;
-  padding: 3.2rem;
-  background: var(--background-primary);
+body{
+    font-size: 1.6rem;
+    padding: 3.2rem;
+    background: var(--background-primary);
 }
+
 
 header {
-  margin-bottom: 4.4rem;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
+    margin-bottom: 4.4rem;
+    max-width: 62.7rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 
-header img {
-  width: 15.4rem;
-  margin-inline: auto;
-  margin-bottom: 3rem;
-}
+    img {
+        width: 15.4rem;
+        margin-inline: auto;
+        margin-bottom: 3rem;
+    }
 
-header button {
-  border: none;
-  background: none;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-  font-weight: 500;
-  margin-bottom: 1.6rem;
-  color: var(--content-secondary);
-  cursor: pointer;
-}
+    button{
+        border: none;
+        background: none;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 1.6rem;
+        color: var(--color-brand);
+        cursor: pointer;
+    }
 
-h1 {
-  font-size: 2.4rem;
-  color: var(--content-primary);
-  line-height: 3.2rem;
+    h1{
+        font-size: 2.4rem;
+        color: var(--content-primary);
+        line-height: 3.2rem;
+    }
 }
 
 main {
-  max-width: 62.7rem;
-  margin-inline: auto;
+    max-width: 62.7rem;
+    margin-inline: auto;
 }
 
-.add-item {
-  margin-bottom: 4rem;
+.add-item{
+    margin-bottom: 4rem;
+
+    input{
+        width: 100%;
+        padding: 1.2rem;
+        border: 2px solid var(--border-primary);
+        border-radius: 1.2rem;
+        margin-bottom: 1.5rem;
+        outline: none;
+        color: var(--content-primary);
+        
+        &::placeholder{
+            color: var(--content-tertiary);
+        }
+
+        &:hover{
+            border: 2px solid var(--border-hover);
+        }
+
+        &:focus{
+            border: 2px solid var(--color-brand)
+        }
+    }
+
+    button{
+        background: var(--color-brand);
+        border: none;
+        color: var(--always-white);
+        width: 100%;
+        padding: 1rem 2.4rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        border-radius: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover{
+            background: var(--color-brand-hover);
+        }
+
+    }
 }
 
-/* Input de adicionar item */
-.add-item input {
-  width: 100%;
-  padding: 1.2rem;
-  border: 2px solid var(--border-primary);
-  margin-bottom: 1.6rem;
-  color: var(--content-primary);
+.list{
+    .item{
+        background: var(--background-secondary);
+        padding: 1.2rem;
+        margin-bottom: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        font-weight: 500;
+        border-radius: 1.2rem;
+        box-shadow: 0 2px 6px rgba(8, 11, 18, 0.2);
+        
+        div{
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        input{
+            display: none;
+
+        }
+
+        .custom-checkbox{
+            width: 1.6rem;
+            height: 1.6rem;
+            border: 1px solid var(--border-primary);
+            border-radius: 0.6rem;
+            cursor: pointer;
+        }
+
+        label{
+            cursor: pointer;
+        }
+
+        div:has(input:checked) {
+            .custom-checkbox {
+                background: var(--color-brand);
+                border: 1px solid var(--color-brand);
+                transition: background .2s ease;
+            }
+              label {
+            text-decoration: line-through;
+        }
+        }
+
+        button {
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            img{
+                width: 1.6rem;
+                opacity: .7;
+            }
+        }
+
+      
+    }
 }
 
-.add-item input::placeholder {
-  color: var(--content-tertiary);
-}
-
-.add-item input:hover {
-  border-color: var(--color-brand-hover);
-}
-
-.add-item input:focus {
-  border-color: var(--color-brand);
-  outline: none;
-}
-
-/* Estilo do botão "Adicionar item" */
-.add-item button {
-  background: var(--color-brand);
-  border: none;
-  color: var(--always-white);
-  width: 100%;
-  padding: 1rem 2.4rem;
-  font-size: 1.6rem;
-  line-height: 2rem;
-  border-radius: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.add-item button:hover {
-  background: var(--color-brand-hover);
-}
-
-/* Lista de itens */
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-/* Cada item da lista */
-.item {
-  background: var(--background-secondary);
-  padding: 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  font-weight: 500;
-  border-radius: 1.2rem;
-  box-shadow: 0px 2px 6px rgba(8, 11, 18, 0.2);
-}
-
-/* Checkbox e texto do item */
-.item > div {
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
-}
-
-/* Oculta checkbox padrão */
-.item input[type="checkbox"] {
-  display: none;
-}
-
-/* Checkbox customizado */
-.custom-checkbox {
-  width: 1.6rem;
-  height: 1.6rem;
-  border: 1px solid var(--border-primary);
-  border-radius: 0.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Botão de deletar item */
-.item button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.6rem;
-  cursor: pointer;
-
-}
-
-
-label {
-    cursor:pointer;
-
-}
- .item:has(input:checked) .custom-checkbox {
-  background: var(--color-brand);
-  transition: background 0.3s ease;
-}
-
-button {
-    background: none;
-    border: none;
+.warning {
+    background:  var(--color-danger);
+    color: var(--always-white);
+    padding: 1.2rem;
     display: flex;
     align-items: center;
-    cursor: pointer;
-}
+    justify-content: space-between;
+    border-radius: 1.2rem;
+    margin-top: 2.4rem;
 
-    img {
-        width: 1.6rem;
-        opacity: 0.7;
-    }
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .4s ease, transform .4s ease;
 
-    .warning {
-        background: var(--color-danger);
-        color: var(--always-white);
-        padding: 1.2rem;
+    div{
+        display: flex;
         align-items: center;
-        justify-content: space-between;
-        border-radius: 1.2rem;
-        margin-top: 2.4rem;
-        
-        
-        opacity: 1;
-        transform: translatey(0);
-        transition: opacity .4s ease, transform .4s ease;
+        gap: .8rem;
     }
 
-    .hide-warning {
-  opacity: 0;
-  transform: translateY(-10px);
+    i{
+        font-size: 2rem;
+    }
+
+    button {
+        border: none;
+        background: none;
+        color: var(--always-white);
+        cursor: pointer;
+    }
+
 }
 
+.hide-warning {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
+@media(min-width: 627px) {
+
+    header{
+        img{
+            margin-bottom: 6.4rem;
+        }
+    }
+
+    .add-item{
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1.6rem;
+
+        input {
+            margin-bottom: 0;
+            grid-column: 1/8;
+        }
+
+        button {
+            grid-column: 8/11;
+        }
+    }
+
+}
