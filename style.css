@@ -218,11 +218,11 @@ main {
         img{
             margin-bottom: 6.4rem;
         }
-    }
+    } 
 
-    .add-item{
+    .add-item{   
         display: grid;
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(10, 1fr); 
         gap: 1.6rem;
 
         input {
