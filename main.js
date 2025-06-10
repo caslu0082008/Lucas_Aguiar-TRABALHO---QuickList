@@ -1,23 +1,24 @@
 let items = []
 
+// Evento para carregar os itens salvos ao iniciar a página
+window.addEventListener("DOMContentLoaded", verifyLocalStorageItems)
+
 function addItem() {
-    const itemName = document.querySelector("#item").value
+    const itemName = document.querySelector("#item").value.trim()
 
     if (itemName === "") {
         alert("Digite um item para adicionar")
         return
     }
 
-
     const item = {
+        id: Date.now(), // ID único
         name: itemName,
         checked: false
     }
 
     items.push(item)
-
     document.querySelector("#item").value = ""
-
     showItemsList()
 }
 
@@ -29,46 +30,45 @@ document.querySelector("#item").addEventListener("keydown", (event) => {
 
 function showItemsList() {
     const sectionList = document.querySelector(".list")
-    sectionList.textContent = ""
+    sectionList.textContent = "" // Limpa antes de renderizar
 
-    items.sort((itemA, itemB) => Number(itemA.checked) - Number(itemB.checked))
+    items.sort((a, b) => Number(a.checked) - Number(b.checked)) // Desmarcados primeiro
 
-    items.map((item, index) => {
-        sectionList.innerHTML += `
-            <div class="item">
-                <div>
-                    <input type="checkbox" name="List" id="item-${index}" ${item.checked && "checked"}>
+    items.forEach((item) => {
+        const div = document.createElement("div")
+        div.className = "item"
 
-                    <div class="custom-checkbox" onclick="checkItem('${item.name}')">
-                        <img src="./assets/checked.svg" alt="checked">
-                    </div>
+        div.innerHTML = `
+            <div>
+                <input type="checkbox" id="item-${item.id}" ${item.checked ? "checked" : ""} onclick="checkItem(${item.id})">
 
-                    <label for="item-${index}" onclick="checkItem('${item.name}')">${item.name}</label>
-                </div>
-
-                <button onclick="removeItem('${item.name}')">
-                    <img src="./assets/trash-icon.svg" alt="trash icon">
-                </button>
+                <label for="item-${item.id}">${item.name}</label>
             </div>
+
+            <button onclick="removeItem(${item.id})">
+                <img src="./assets/trash-icon.svg" alt="trash icon">
+            </button>
         `
+
+        sectionList.appendChild(div)
     })
 
     localStorage.setItem("items", JSON.stringify(items))
 }
 
-function removeItem(itemName) {
-    const itemIndex = items.findIndex(item => item.name === itemName)
+function removeItem(itemId) {
+    const itemIndex = items.findIndex(item => item.id === itemId)
     const divWarning = document.querySelector(".warning")
+
+    if (itemIndex !== -1) {
+        items.splice(itemIndex, 1)
+    }
 
     divWarning.classList.remove("hide-warning")
 
     setTimeout(() => {
         divWarning.classList.add("hide-warning")
     }, 4000)
-
-    if (itemIndex !== -1) {
-        items.splice(itemIndex, 1)
-    }
 
     showItemsList()
 }
@@ -77,10 +77,12 @@ function addHideWarningClass() {
     document.querySelector(".warning").classList.add("hide-warning")
 }
 
-function checkItem(itemName) {
-    const item = items.find((item) => item.name === itemName)
-    item.checked = !item.checked
-    showItemsList()
+function checkItem(itemId) {
+    const item = items.find(item => item.id === itemId)
+    if (item) {
+        item.checked = !item.checked
+        showItemsList()
+    }
 }
 
 function verifyLocalStorageItems() {
